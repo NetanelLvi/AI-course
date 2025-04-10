@@ -102,7 +102,7 @@
 </head>
 <body>
   <h2> שאלון בניית קורות חיים מותאמים אישית למשרה</h2>
-  <form method="POST" action="https://hook.eu2.make.com/m2dg2m5ghouddruwk7pr5jwruwboo2dd">
+  <form method="POST" action="https://hook.eu2.make.com/m2dg2m5ghouddruwk7pr5jwruwboo2dd" enctype="multipart/form-data">
 
     <label for="fullname">שם מלא:</label>
     <input type="text" id="fullname" name="fullname" value="שם לדוגמה" required>
@@ -149,7 +149,11 @@
     <label for="upload">העלה קובץ קורות חיים (אופציונלי):</label>
     <input type="file" id="upload" name="cv_file" accept=".pdf,.doc,.docx">
   
+    <label for="additional_info">האם יש מידע נוסף שתרצה להוסיף?</label>
+    <textarea id="additional_info" name="additional_info" rows="3">מידע נוסף לדוגמה</textarea>
+
 </form>
+  
     <button type="submit">שלח</button>
   </form>
 </body>
