@@ -59,12 +59,16 @@
       cursor: pointer;
       font-size: 16px;
       font-weight: 600;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for slight lift effect */
       display: block;
       width: 100%;
     }
     button:hover {
       background-color: #005fa3;
+      transform: translateY(-2px); /* Slight lift on hover for feedback */
+    }
+    button:active {
+      transform: translateY(0); /* Reset lift when clicked */
     }
     /* Responsive Design */
     @media (max-width: 600px) {
@@ -98,7 +102,7 @@
     label[for="email"]::after,
     label[for="job_title"]::after,
     label[for="languages"]::after {
-      opacity: 1; /* Visible for required fields */
+      opacity: 1;
     }
   </style>
 </head>
