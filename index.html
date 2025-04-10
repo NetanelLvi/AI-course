@@ -7,36 +7,96 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 600px;
+      max-width: 700px; /* Slightly wider for better spacing */
       margin: 40px auto;
-      padding: 20px;
-      background-color: #f7f7f7;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 25px;
+      background-color: #fafafa; /* Softer background */
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08); /* Subtler shadow */
+      direction: rtl; /* Ensure right-to-left alignment */
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+      text-align: center;
+      margin-bottom: 25px;
     }
     label {
       display: block;
-      margin-top: 15px;
+      margin-top: 20px; /* Increased spacing */
       font-weight: bold;
+      font-size: 16px; /* Larger for readability */
+      color: #444;
     }
     input, textarea, select {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      padding: 12px; /* Slightly more padding */
+      margin-top: 6px;
+      border: 1px solid #ddd; /* Lighter border */
+      border-radius: 6px; /* Softer corners */
+      font-size: 15px;
+      background-color: #fff;
+      box-sizing: border-box; /* Ensures padding doesn’t affect width */
+      transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #0077cc; /* Highlight on focus */
+      box-shadow: 0 0 5px rgba(0,119,204,0.3); /* Subtle glow */
+      outline: none;
+    }
+    textarea {
+      resize: vertical; /* Allow vertical resize only */
+      min-height: 80px; /* Minimum height for better usability */
     }
     button {
-      margin-top: 20px;
-      padding: 10px 15px;
+      margin-top: 25px;
+      padding: 12px 20px; /* Larger clickable area */
       background-color: #0077cc;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background-color 0.3s ease; /* Smooth hover effect */
+      display: block; /* Center button */
+      width: 100%; /* Full-width button */
     }
     button:hover {
       background-color: #005fa3;
+    }
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      body {
+        margin: 20px 10px;
+        padding: 20px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      label {
+        font-size: 14px;
+      }
+      input, textarea, select {
+        font-size: 14px; /* Prevent mobile zoom issues */
+      }
+      button {
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+    }
+    /* Subtle Required Field Indicator */
+    label::after {
+      content: "*";
+      color: #e74c3c;
+      font-size: 14px;
+      margin-right: 4px;
+      opacity: 0; /* Hidden by default */
+    }
+    label[for="fullname"]::after,
+    label[for="email"]::after {
+      opacity: 1; /* Visible for required fields */
     }
   </style>
 </head>
@@ -59,6 +119,21 @@
     <label for="values">מה חשוב לך במקום העבודה? (ערכים, סביבה, תרבות ארגונית)</label>
     <textarea id="values" name="values" rows="3">שקיפות, שיתוף פעולה, חדשנות</textarea>
   
+    <label for="education">השכלה:</label>
+    <textarea id="education" name="education" rows="4" placeholder="פרט את השכלתך, תחומי לימוד ומוסדות"></textarea>
+    
+    <label for="experience">ניסיון תעסוקתי (עבודה אחרונה):</label>
+    <textarea id="experience" name="experience" rows="4" placeholder="פרט את הניסיון התעסוקתי האחרון שלך"></textarea>
+    
+    <label for="languages">שפות:</label>
+    <input type="text" id="languages" name="languages" placeholder="לדוגמא: עברית, אנגלית, צרפתית">
+    
+    <label for="certifications">הסמכות והכשרות:</label>
+    <textarea id="certifications" name="certifications" rows="3" placeholder="רשום את ההסמכות שלך"></textarea>
+    
+    <label for="hobbies">תחביבים:</label>
+    <textarea id="hobbies" name="hobbies" rows="3" placeholder="פרט את תחביביך"></textarea>
+
     <label for="career_goals">מהן המטרות התעסוקתיות שלך?</label>
     <textarea id="career_goals" name="career_goals" rows="3">להתקדם לתפקיד ניהולי בכיר</textarea>
   
@@ -76,3 +151,5 @@
   
     <button type="submit">שלח</button>
   </form>
+</body>
+</html>
