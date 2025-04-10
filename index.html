@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>טופס בניית קורות חיים</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f7f7f7;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <h2>שאלון בניית קורות חיים מותאמים אישית</h2>
+  <form method="POST" action="https://example.com/webhook">
+
+    <label for="fullname">שם מלא:</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">כתובת מייל:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="job_title">תפקיד נוכחי / אחרון:</label>
+    <input type="text" id="job_title" name="job_title">
+
+    <label for="strengths">מהן החוזקות המרכזיות שלך?</label>
+    <textarea id="strengths" name="strengths" rows="3"></textarea>
+
+    <label for="values">מה חשוב לך במקום העבודה? (ערכים, סביבה, תרבות ארגונית)</label>
+    <textarea id="values" name="values" rows="3"></textarea>
+
+    <label for="career_goals">מהן המטרות התעסוקתיות שלך?</label>
+    <textarea id="career_goals" name="career_goals" rows="3"></textarea>
+
+    <label for="fav_projects">איזה פרויקט או תפקיד אהבת במיוחד ולמה?</label>
+    <textarea id="fav_projects" name="fav_projects" rows="3"></textarea>
+
+    <label for="upload">העלה קובץ קורות חיים (אופציונלי):</label>
+    <input type="file" id="upload" name="cv_file" accept=".pdf,.doc,.docx">
+
+    <button type="submit">שלח</button>
+  </form>
+</body>
+</html>
