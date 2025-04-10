@@ -7,13 +7,13 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 700px; /* Slightly wider for better spacing */
+      max-width: 700px;
       margin: 40px auto;
       padding: 25px;
-      background-color: #fafafa; /* Softer background */
+      background-color: #fafafa;
       border-radius: 10px;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.08); /* Subtler shadow */
-      direction: rtl; /* Ensure right-to-left alignment */
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      direction: rtl;
     }
     h2 {
       font-size: 24px;
@@ -24,34 +24,34 @@
     }
     label {
       display: block;
-      margin-top: 20px; /* Increased spacing */
+      margin-top: 20px;
       font-weight: bold;
-      font-size: 16px; /* Larger for readability */
+      font-size: 16px;
       color: #444;
     }
     input, textarea, select {
       width: 100%;
-      padding: 12px; /* Slightly more padding */
+      padding: 12px;
       margin-top: 6px;
-      border: 1px solid #ddd; /* Lighter border */
-      border-radius: 6px; /* Softer corners */
+      border: 1px solid #ddd;
+      border-radius: 6px;
       font-size: 15px;
       background-color: #fff;
-      box-sizing: border-box; /* Ensures padding doesn’t affect width */
-      transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     input:focus, textarea:focus, select:focus {
-      border-color: #0077cc; /* Highlight on focus */
-      box-shadow: 0 0 5px rgba(0,119,204,0.3); /* Subtle glow */
+      border-color: #0077cc;
+      box-shadow: 0 0 5px rgba(0,119,204,0.3);
       outline: none;
     }
     textarea {
-      resize: vertical; /* Allow vertical resize only */
-      min-height: 80px; /* Minimum height for better usability */
+      resize: vertical;
+      min-height: 80px;
     }
     button {
       margin-top: 25px;
-      padding: 12px 20px; /* Larger clickable area */
+      padding: 12px 20px;
       background-color: #0077cc;
       color: white;
       border: none;
@@ -59,9 +59,9 @@
       cursor: pointer;
       font-size: 16px;
       font-weight: 600;
-      transition: background-color 0.3s ease; /* Smooth hover effect */
-      display: block; /* Center button */
-      width: 100%; /* Full-width button */
+      transition: background-color 0.3s ease;
+      display: block;
+      width: 100%;
     }
     button:hover {
       background-color: #005fa3;
@@ -79,7 +79,7 @@
         font-size: 14px;
       }
       input, textarea, select {
-        font-size: 14px; /* Prevent mobile zoom issues */
+        font-size: 14px;
       }
       button {
         font-size: 14px;
@@ -92,26 +92,28 @@
       color: #e74c3c;
       font-size: 14px;
       margin-right: 4px;
-      opacity: 0; /* Hidden by default */
+      opacity: 0;
     }
     label[for="fullname"]::after,
-    label[for="email"]::after {
+    label[for="email"]::after,
+    label[for="job_title"]::after,
+    label[for="languages"]::after {
       opacity: 1; /* Visible for required fields */
     }
   </style>
 </head>
 <body>
-  <h2> שאלון בניית קורות חיים מותאמים אישית למשרה</h2>
+  <h2>שאלון בניית קורות חיים מותאמים אישית למשרה</h2>
   <form method="POST" action="https://hook.eu2.make.com/m2dg2m5ghouddruwk7pr5jwruwboo2dd" enctype="multipart/form-data">
 
     <label for="fullname">שם מלא:</label>
-    <input type="text" id="fullname" name="fullname" value="שם לדוגמה" required>
+    <input type="text" id="fullname" name="fullname" value="שם לדוגמה" required aria-required="true">
   
     <label for="email">כתובת מייל:</label>
-    <input type="email" id="email" name="email" value="example@example.com" required>
+    <input type="email" id="email" name="email" value="example@example.com" required aria-required="true">
   
     <label for="job_title">תפקיד נוכחי / אחרון:</label>
-    <input type="text" id="job_title" name="job_title" value="מנהל פרויקטים">
+    <input type="text" id="job_title" name="job_title" value="מנהל פרויקטים" required aria-required="true">
   
     <label for="strengths">מהן החוזקות המרכזיות שלך?</label>
     <textarea id="strengths" name="strengths" rows="3">יכולת ניהול, עבודת צוות, פתרון בעיות</textarea>
@@ -126,7 +128,7 @@
     <textarea id="experience" name="experience" rows="4">מנהל פרויקטים בחברת טק, 2020-2023, ניהול צוות של 10 עובדים</textarea>
     
     <label for="languages">שפות:</label>
-    <input type="text" id="languages" name="languages" value="עברית, אנגלית" placeholder="לדוגמא: עברית, אנגלית, צרפתית">
+    <input type="text" id="languages" name="languages" value="עברית, אנגלית" placeholder="לדוגמא: עברית, אנגלית, צרפתית" required aria-required="true">
     
     <label for="certifications">הסמכות והכשרות:</label>
     <textarea id="certifications" name="certifications" rows="3">הסמכת PMP, קורס ניהול פרויקטים</textarea>
@@ -145,14 +147,12 @@
   
     <label for="existing_cv">הדבק כאן את נוסח קורות החיים הנוכחיים שלך (אם יש):</label>
     <textarea id="existing_cv" name="existing_cv" rows="6">נוסח קורות חיים לדוגמה</textarea>
+
+    <label for="additional_info">האם יש מידע נוסף שתרצה להוסיף?</label>
+    <textarea id="additional_info" name="additional_info" rows="3">מידע נוסף לדוגמה</textarea>
   
     <label for="upload">העלה קובץ קורות חיים (אופציונלי):</label>
     <input type="file" id="upload" name="cv_file" accept=".pdf,.doc,.docx">
-  
-    <label for="additional_info">האם יש מידע נוסף שתרצה להוסיף?</label>
-    <textarea id="additional_info" name="additional_info" rows="3">מידע נוסף לדוגמה</textarea>
-
-</form>
   
     <button type="submit">שלח</button>
   </form>
